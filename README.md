@@ -1,4 +1,4 @@
-<img width="1600" height="1600" alt="generated_images" src="https://github.com/user-attachments/assets/9ed84f47-fb8b-4847-a73c-48c15d1dccea" /><img width="1600" height="1600" alt="generated_images" src="https://github.com/user-attachments/assets/fab7da99-9029-4a42-8c27-b85e7d04e3b1" /># DCGAN_PyTorch — 深度卷积生成对抗网络
+# DCGAN_PyTorch — 深度卷积生成对抗网络
 
 基于PyTorch实现的DCGAN(Deep Convolutional GAN)，用于生成 **64×64** 的动漫图像。该项目采用多种现代 GAN 训练技巧，提供完整的 **训练 → 断点续训 → 生成** 流程。
 训练数据集来自于 https://www.kaggle.com/datasets/soumikrakshit/anime-faces
