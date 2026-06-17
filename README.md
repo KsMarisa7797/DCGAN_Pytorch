@@ -1,7 +1,15 @@
-# DCGAN_PyTorch — 深度卷积生成对抗网络
+<img width="1600" height="1600" alt="generated_images" src="https://github.com/user-attachments/assets/9ed84f47-fb8b-4847-a73c-48c15d1dccea" /><img width="1600" height="1600" alt="generated_images" src="https://github.com/user-attachments/assets/fab7da99-9029-4a42-8c27-b85e7d04e3b1" /># DCGAN_PyTorch — 深度卷积生成对抗网络
 
-基于PyTorch实现的DCGAN(Deep Convolutional GAN)，用于生成 **64×64** 的动漫/人脸图像。该项目采用多种现代 GAN 训练技巧，提供完整的 **训练 → 断点续训 → 生成** 流程。
+基于PyTorch实现的DCGAN(Deep Convolutional GAN)，用于生成 **64×64** 的动漫图像。该项目采用多种现代 GAN 训练技巧，提供完整的 **训练 → 断点续训 → 生成** 流程。
 训练数据集来自于 https://www.kaggle.com/datasets/soumikrakshit/anime-faces
+
+1500轮次训练的生成图像
+<img width="1600" height="1600" alt="all_64" src="https://github.com/user-attachments/assets/630768c8-048c-48a7-bf15-7df400b46462" />
+
+判别器和生成器的loss折线图
+*本项目使用了断点训练下图经过了多次调参经供参`以实际训练为准`*
+<img width="1000" height="500" alt="loss_curve" src="https://github.com/user-attachments/assets/6962dc6c-507a-4f13-9d1f-b94e4b602dc4" />
+
 
 ---
 
@@ -76,7 +84,32 @@ DCGAN_Pytorch/
 
 ### 2. 训练模型
 
-运行train.py，output/中会记录每一轮次生成的8张图像方便观察生成质量和调试代码，如果你认为这些图片占用设备硬盘的存储空间可以将train.py中的`generate_and_save_images` 注释
+运行`train.py`，`output/`中会记录每一轮次生成的8张图像方便观察生成质量和调试代码，如果你认为这些图片占用设备硬盘的存储空间可以将`train.py`中的`generate_and_save_images` 注释
+
+训练配置（可在 `train.py` 中修改）：
+- 总 Epoch：1500
+- Batch Size：256
+- 学习率：G = 1e-4，D = 2e-4
+- Checkpoint 保存间隔：50 epoch
+
+训练过程中会在 `output/` 目录下每个 epoch 保存一张生成效果预览图，训练结束后自动保存 loss 曲线。
+
+### 3. 断点续训
+
+训练中断后直接再次运行 `python train.py`，脚本会自动找到最新的 checkpoint 并恢复训练。
+
+### 4. 生成图像
+
+训练完成后运行`generate.py`
+
+会生成：
+- `generated/all_64.png` — 64 张随机生成图像（8×8 网格）
+- `generated/top9.png` — 判别器评分最高的 9 张图像（3×3 网格）
+
+### 5. 提取模型权重
+
+如果你对某个`checkpoint`感兴趣可以在`loadcheckpoint.py`中提取独立的 `generator.pth` 和 `discriminator.pth`
+
 
 
 
