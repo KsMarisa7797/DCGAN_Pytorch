@@ -4,7 +4,7 @@
 训练数据集来自于 https://www.kaggle.com/datasets/soumikrakshit/anime-faces
 
 1500轮次训练的生成图像
-<img width="1600" height="1600" alt="all_64" src="https://github.com/user-attachments/assets/630768c8-048c-48a7-bf15-7df400b46462" />
+<img width="60%" alt="all_64" src="https://github.com/user-attachments/assets/630768c8-048c-48a7-bf15-7df400b46462" />
 
 判别器和生成器的loss折线图
 *本项目使用了断点训练下图经过了多次调参经供参`以实际训练为准`*
