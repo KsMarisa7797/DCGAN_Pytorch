@@ -8,7 +8,7 @@
 <img width="60%" alt="all_64" src="https://github.com/user-attachments/assets/630768c8-048c-48a7-bf15-7df400b46462" />
 
 判别器和生成器的loss折线图
-*本项目使用了断点训练下图经过了多次调参经供参`以实际训练为准`*
+*本项目使用了断点训练下图经过了多次调参经供参考`以实际训练为准`*
 
 <img width="1000" height="500" alt="loss_curve" src="https://github.com/user-attachments/assets/6962dc6c-507a-4f13-9d1f-b94e4b602dc4" />
 
